@@ -1,6 +1,21 @@
 <html>
   <head>
     <title>Test SVG with Clickable Area</title>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        package_price: 100,
+        package_upload: 2,
+        package_download: 2,
+      })
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','<YOUR_GTM_ID>');</script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
     <div>
@@ -24,11 +39,15 @@
     </div>
     <br />
     <img src="button.svg" usemap="#package_map"/>
+    <br />
+    <div>
+      <button onclick="alert('Submit')">Next</button>
+    </div>
     <map name="package_map">
-      <area id="1" shape="rect" coords="0,0,100,100" />
-      <area id="2" shape="rect" coords="100,0,200,100" />
-      <area id="3" shape="rect" coords="200,0,300,100" />
-      <area id="4" shape="rect" coords="300,0,400,100" />
+      <area id="1" shape="rect" coords="0,0,100,50" />
+      <area id="2" shape="rect" coords="100,0,200,50" />
+      <area id="3" shape="rect" coords="200,0,300,50" />
+      <area id="4" shape="rect" coords="300,0,400,50" />
     </map>
     <script>
       const packages = {
@@ -42,6 +61,11 @@
           document.getElementById('price').textContent = packages[i].price;
           document.getElementById('upload').textContent = packages[i].upload;
           document.getElementById('download').textContent = packages[i].download;
+          window.dataLayer.push({
+            package_price: packages[i].price,
+            package_upload: packages[i].upload,
+            package_download: packages[i].download,
+          });
         }
       }
     </script>
