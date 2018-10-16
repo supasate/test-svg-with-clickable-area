@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Test SVG with Clickable Area</title>
+  </head>
+  <body>
+    <div>
+      Please select your super cool internet package.
+    </div>
+    <br />
+    <div>
+      <span>Price </span>
+      <span id="price">100</span>
+      <span> Baht</span>
+    </div>
+    <div>
+      <span>Upload </span>
+      <span id="upload">2</span>
+      <span> Mbps</span>
+    </div>
+    <div>
+      <span>Download </span>
+      <span id="download">2</span>
+      <span> Mbps</span>
+    </div>
+    <br />
+    <img src="button.svg" usemap="#package_map"/>
+    <map name="package_map">
+      <area id="1" shape="rect" coords="0,0,100,100" />
+      <area id="2" shape="rect" coords="100,0,200,100" />
+      <area id="3" shape="rect" coords="200,0,300,100" />
+      <area id="4" shape="rect" coords="300,0,400,100" />
+    </map>
+    <script>
+      const packages = {
+        1: { price: 100, upload: 2, download: 2 },
+        2: { price: 200, upload: 4, download: 4 },
+        3: { price: 300, upload: 6, download: 6 },
+        4: { price: 400, upload: 8, download: 8 },
+      }
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(i).onclick = function() {
+          document.getElementById('price').textContent = packages[i].price;
+          document.getElementById('upload').textContent = packages[i].upload;
+          document.getElementById('download').textContent = packages[i].download;
+        }
+      }
+    </script>
+  </body>
+</html>

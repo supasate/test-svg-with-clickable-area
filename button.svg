@@ -1,0 +1,18 @@
+<svg width="400" height="50" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <rect x="0" y="0" width="100" height="50" fill="yellow"></rect>
+    <text x="20" y="30" font-size="18" fill="blue">Pack 1</text>
+  </g>
+  <g>
+    <rect x="100" y="0" width="100" height="50" fill="green"></rect>
+    <text x="120" y="30" font-size="18" fill="white">Pack 2</text>
+  </g>
+  <g>
+    <rect x="200" y="0" width="100" height="50" fill="grey"></rect>
+    <text x="220" y="30" font-size="18" fill="blue">Pack 3</text>
+  </g>
+  <g>
+    <rect x="300" y="0" width="100" height="50" fill="black"></rect>
+    <text x="320" y="30" font-size="18" fill="white">Pack 4</text>
+  </g>
+</svg>
